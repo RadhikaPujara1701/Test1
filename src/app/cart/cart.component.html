@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="row">
+    <div class="col-lg-3 col-3" *ngFor="let product of products; let i = index">
+      <img class="image" style="width: 200px" src="{{ product.image }}" />
+      <h4>Title : {{ product.title }}</h4>
+      <p>{{ product.description }}</p>
+      <strong>Price : $ {{ product.price }}</strong
+      ><br />
+      <button class="btn btn-primary" (click)="remove(product)">Remove</button>
+    </div>
+  </div>
+</div>

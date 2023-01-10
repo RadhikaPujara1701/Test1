@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="row">
+    <div class="col-lg-3 col-3" *ngFor="let item of allData">
+      <img class="image" src="{{ item.image }}" />
+      <h4>{{ item.title }}</h4>
+      <p>{{ item.description }}</p>
+      <strong>Price : $ {{ item.price }}</strong
+      ><br />
+      <button class="btn btn-primary" (click)="addProduct(item)">
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>
