@@ -15,5 +15,9 @@ export class HeaderComponent implements OnInit {
       this.totalCount= res.length;
     })
   }
+  
+  ngOnDestroy(){
+    this.cartService.getProduct().unsubscribe();
+  }
 
 }
