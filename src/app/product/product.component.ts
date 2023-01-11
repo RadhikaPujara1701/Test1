@@ -15,6 +15,7 @@ export class ProductComponent implements OnInit {
     private cartService: CartService
   ) {}
 
+  // get all data
   ngOnInit(): void {
     this.productService.getAll().subscribe((res: any[]) => {
       this.allData = res;
@@ -25,7 +26,11 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  addProduct(item: any) {
+  addProduct(item: any) {         //get all product in cartlist
     this.cartService.addProduct(item);
   }
+  
+  ngOnDestroy(){                //unsubscribe service
+    this.productService.getAll().unsubscribe();
+    this.cartService.addProduct().unsubscribe();
 }
