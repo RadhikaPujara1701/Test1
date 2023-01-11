@@ -32,5 +32,5 @@ export class ProductComponent implements OnInit {
   
   ngOnDestroy(){                //unsubscribe service
     this.productService.getAll().unsubscribe();
-    this.cartService.addProduct().unsubscribe();
+//     this.cartService.addProduct().unsubscribe();
 }
